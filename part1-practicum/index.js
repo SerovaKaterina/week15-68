@@ -18,12 +18,8 @@ for(i = 10; i >= 1; i--) {
 }
 //Задание 4
 // Выведите таблицу умножения на 5 от 1 до 10
-let x;
 for(let i = 1; i <= 10; i++) {
-    for(let y = 1; y <= 5; y++) {
-        x = i*y;
-    }
-    console.log(x);
+    console.log(`${i} * 5 = ${i*5}`);
 }
 //Задание 5
 // Вычислить сумму чисел от 1 до 100 и вывести значение в консоль
@@ -44,8 +40,8 @@ const numbers = [1, 2, 3, 4, 5];
 let sumNumbers = 0;
 for(let i = 0; i < numbers.length; i++) {
     sumNumbers += numbers[i];
-    console.log(sumNumbers);
 }
+console.log(sumNumbers);
 //Задание 8
 // Напишите цикл for, который изменяет массив животных, делая их прекрасными! Например, если есть следующий массив: let animals = ["Кот", "Рыба", "Лемур"]; цикл должен сделать его таким: ["Кот - прекрасное животное", "Рыба - прекрасное животное", "Лемур - прекрасное животное"]
 // Подсказка: вам понадобится переприсвоить значения для каждого индекса, то есть присвоить новые значения уже суще- ствующим элементам: animals[0] = animals[0] + " - прекрасное животное";
@@ -72,7 +68,7 @@ console.log(arr);
 // Подсказка: вам понадобится метод массивов split
 const sentences = ['Hello, world!', 'How are you?'];
 for (let i = 0; i < sentences.length; i++) {
-    const sentencesText = sentences[i].split('');
+    const sentencesText = sentences[i].split(' ');
     console.log(sentencesText);
 }
 //Задание 12
@@ -80,8 +76,8 @@ for (let i = 0; i < sentences.length; i++) {
 let sumEl = 0;
     for(let number of numbers) {
         sumEl += number;
-        console.log(sumEl);
     }
+    console.log(sumEl);
 //Задание 13
 // Выведите длину каждого слова из массива строк в консоль
 const list = ['apple', 'banana', 'cherry'];
@@ -129,20 +125,29 @@ while (reverseNum >= 1) {
 // Проверьте, все ли элементы массива являются положительными числами используя цикл while
 // Подсказка: используйте директиву break
 const allNumbers = [1, 2, 3, -4, 5];
-let allPositive = true;
-//let i = 0;
-while (i <= 0) {
-    console.log("в массиве есть отрицательные элементы");
-    break;
-  } 
+let el = 0;
+while (el < allNumbers.length) {
+if (allNumbers[el] < 0) {
+console.log('В массиве есть отрицательные элементы');
+break;
+}
+el++;
+}
+if (el === allNumbers.length) {
+    console.log('Все элементы положительные');
+}
 //Задание 20
 // Выведите значения элементов массива до первого отрицательного числа используя цикл do...while
 const random = [2, 4, 6, -3, 8, 10];
-//let i = 0;
+let a = 0;
 do {
-    console.log(random[i]);
-    i++;
-} while (random[i] >= 0); 
+    console.log(random[a]);
+    a++;
+} while (random[a] >= 0);
+if (a > random.length) {
+    console.log('Ошибка!');
+}
+
 //Задание 21
 // Выведите числа от 1 до 100, пропуская числа, которые делятся на 3 используя цикл do...while
 //let i = 1;
