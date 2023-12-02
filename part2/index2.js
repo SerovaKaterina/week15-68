@@ -4,7 +4,10 @@ const temp = [];
 // Создаем цикл, который пройдет по массиву и попросит пользователя ввести информацию
 for (let i = 0; i < cities.length; i++) {
     const temperatura = prompt(`Введите температуру для ${cities[i]}`);
-    temp.push(temperatura);
+    if(isNaN(temperatura)) {
+        alert('Вы ввели некорректное число! Попробуйте ещё раз.');
+    };//проверяем, является ли введеное значение  корректным
+    temp.push(+temperatura);//преобразуем строку в число
     const city = document.createElement('li');
     city.textContent = `Температура в городе ${cities[i]}: ${temperatura} °С`;
     citiesData.append(city);
